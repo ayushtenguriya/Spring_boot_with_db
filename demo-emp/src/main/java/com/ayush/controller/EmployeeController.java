@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200/")
 public class EmployeeController {
     //http://localhost:8081/swagger-ui.html
 
@@ -17,6 +18,7 @@ public class EmployeeController {
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String save(@RequestBody Employee employee) {
+        System.out.println("save called.");
         service.saveEmployee(employee);
         return "Employee Saved";
     }
