@@ -26,7 +26,6 @@ public class EmployeeController {
     @PutMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String update(@RequestBody Employee employee) {
         service.updateEmployee(employee);
-		//abhishek
         return "Employee Updated";
     }
 
